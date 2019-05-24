@@ -30,6 +30,8 @@ export default ({ data }) => {
             <PostTags tags={node.frontmatter.tags} />
             <PostLink to={node.fields.slug}>
               <PostTitle>{node.frontmatter.title} </PostTitle>
+              <div>☕ {node.fields.readingTime.text}</div>
+              <br />
             </PostLink>
             <p>{node.excerpt}</p>
             <hr />

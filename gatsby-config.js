@@ -48,7 +48,8 @@ module.exports = {
             options: {
               classPrefix: 'language-'
             }
-          }
+          },
+          'gatsby-remark-reading-time'
         ]
       }
     },

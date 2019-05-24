@@ -18,6 +18,8 @@ export default ({ data }) => {
       <PostWrapper>
         <span className="datetime">{post.frontmatter.date}</span>
         <h1>{post.frontmatter.title}</h1>
+        <div>☕ {post.fields.readingTime.text}</div>
+        <br />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
         <p>
@@ -36,6 +38,11 @@ export const query = graphql`
         title
         date(formatString: "DD MMMM, YYYY")
         tags
+      }
+      fields {
+        readingTime {
+          text
+        }
       }
     }
   }

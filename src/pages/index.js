@@ -18,6 +18,9 @@ export const query = graphql`
         node {
           fields {
             slug
+            readingTime {
+              text
+            }
           }
           id
           frontmatter {
