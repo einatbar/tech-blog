@@ -1,9 +1,14 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import styled from 'styled-components'
-
+import styled, { createGlobalStyle } from 'styled-components'
 import Sidebar from './sidebar'
+
+const GlobalStyle = createGlobalStyle`
+html {
+  overflow: hidden;
+}
+`
 
 const Container = styled.div`
   display: flex;
@@ -14,7 +19,8 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  overflow: scroll;
+  height: 100%;
+  overflow-y: scroll;
   padding: 20px;
   color: #7e7e7e;
 `
@@ -43,6 +49,7 @@ export default ({ children }) => (
             <title>{title}</title>
           </Helmet>
           <Container>
+            <GlobalStyle />
             <Sidebar title={title} authorName={authorName} />
             <Content>{children}</Content>
           </Container>
